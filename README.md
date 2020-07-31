@@ -1,5 +1,8 @@
 # Kevin Wee's Surge Modules
 
+Netflix 评分 (Forked from https://github.com/yichahucha/surge)
+https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Netflix%20ratings.sgmodule
+
 Youtube 屏蔽广告 (Forked from https://github.com/jimmyorz/Surge)
 https://raw.githubusercontent.com/KevinWee/SurgeModules/master/YouTube.sgmodule
 
@@ -14,6 +17,3 @@ https://www.jkg.tw/p3330/
 # 推薦規則
 ADList
 https://raw.githubusercontent.com/jkgtw/Surge/master/Modules/ADList.sgmodule
-
-皮樂姐推薦
-https://kinta.ma/surge/
