@@ -4,7 +4,7 @@ Youtube 屏蔽广告 (Forked from https://github.com/jimmyorz/Surge)
 https://raw.githubusercontent.com/KevinWee/SurgeModules/master/YouTube.sgmodule
 
 人人视频 屏蔽广告 (Forked from https://github.com/Choler/Surge)
-https://raw.githubusercontent.com/KevinWee/SurgeModule/master/rrsp.sgmodule
+https://raw.githubusercontent.com/KevinWee/SurgeModules/master/rrsp.sgmodule
 
 
 # 教學
