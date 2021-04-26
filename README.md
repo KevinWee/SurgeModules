@@ -3,8 +3,8 @@
 JD 历史价格 (Forked from https://github.com/yichahucha/surge)
 https://raw.githubusercontent.com/KevinWee/SurgeModules/master/jd_price.sgmodule
 
-Youtube 屏蔽广告 (Forked from https://github.com/jimmyorz/Surge)
-https://raw.githubusercontent.com/KevinWee/SurgeModules/master/YouTube.sgmodule
+知乎 屏蔽广告 (Forked from https://github.com/Choler/Surge)
+https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Zhihu.sgmodule
 
 人人视频 屏蔽广告 (Forked from https://github.com/Choler/Surge)
 https://raw.githubusercontent.com/KevinWee/SurgeModules/master/rrsp.sgmodule
