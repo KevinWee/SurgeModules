@@ -1,7 +1,7 @@
 # Kevin Wee's Surge Modules
 
 JD 历史价格 (Forked from https://github.com/yichahucha/surge)
-https://raw.githubusercontent.com/KevinWee/SurgeModules/master/jd_price.sgmodule
+https://raw.githubusercontent.com/KevinWee/SurgeModules/master/jdprice.sgmodule
 
 知乎 屏蔽广告 (Forked from https://github.com/Choler/Surge)
 https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Zhihu.sgmodule
