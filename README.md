@@ -1,7 +1,7 @@
 # Kevin Wee's Surge Modules
 
-Netflix 评分 (Forked from https://github.com/yichahucha/surge)
-https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Netflix%20ratings.sgmodule
+JD 历史价格 (Forked from https://github.com/yichahucha/surge)
+https://raw.githubusercontent.com/KevinWee/SurgeModules/master/jd_price.sgmodule
 
 Youtube 屏蔽广告 (Forked from https://github.com/jimmyorz/Surge)
 https://raw.githubusercontent.com/KevinWee/SurgeModules/master/YouTube.sgmodule
