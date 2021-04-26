@@ -1,7 +1,3 @@
-# 不生效或失效的检查一下配置有没有这两条复写，删除试试
-# ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start - reject
-# ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=(start|queryMaterialAdverts) - reject
-
 #!name=京东商城历史价格
 #!desc=查询商品历史价格并显示
 #!system=ios
