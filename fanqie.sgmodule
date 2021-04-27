@@ -6,4 +6,4 @@
 DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT-TINYGIF
 
 [Script]
-fanqie = type=http-response,pattern=^http?:\/\/.+\.qdetyy.com\/.+\.m3u8$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/fanqie.js
+fanqie = type=http-response,pattern=^http?:\/\/.+\.qdetyy.com\/.+\.m3u8$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/fanqie.js
