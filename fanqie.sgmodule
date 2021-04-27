@@ -1,0 +1,10 @@
+  
+#!name=番茄影视屏蔽广告
+#!desc=屏蔽番茄影视APP中的第三方广告
+#!system=ios
+
+[Rule]
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT-TINYGIF
+
+[Script]
+fanqie = type=http-response,pattern=^http?:\/\/.+\.qdetyy.com\/.+\.m3u8$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/fanqie.js
