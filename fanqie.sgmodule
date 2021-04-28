@@ -1,5 +1,5 @@
 #!name=番茄影视屏蔽广告
-#!desc=屏蔽番茄影视APP中的第三方广告
+#!desc=屏蔽番茄影视APP中的广告
 #!system=ios
 
 [Rule]
