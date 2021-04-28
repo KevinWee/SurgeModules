@@ -6,3 +6,4 @@
 fanqie = type=http-response,pattern=^https?:\/\/.+\.pangolin-sdk-toutiao.com.+$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/fanqie.js
 fanqie2= type=http-response,pattern=^https?:\/\/.+\.pglstatp-toutiao.com.+\/package.json$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/fanqie.js
 fanqie3= type=http-response,pattern=^http?:\/\/.+\.qdetyy.com\:?\d*\/.+\.m3u8$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/fanqie.js
+fanqie4= type=http-response,pattern=^http?:\/\/api.fanqie.tv/tomato/config/fqdaily?platform=iOS.+$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/fanqie.js
