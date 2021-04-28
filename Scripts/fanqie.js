@@ -8,6 +8,7 @@ if (url.indexOf(path1) != -1) {
     obj.data.playAd = 0;
     obj.data.splashAd = 0;
     obj.data.playSwitchAd = 0;
+    console.log(JSON.stringify(obj));
     $done({ body: JSON.stringify(obj) });
 }else{
     $done({});
