@@ -3,6 +3,6 @@
 #!system=ios
 
 [Script]
-fanqie = type=http-response,pattern=^https?:\/\/.+\.pglstatp-toutiao.com.+$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/fanqie.js
+fanqie = type=http-response,pattern=^https?:\/\/.+\.pglstatp-toutiao.com.+\/package.json$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/fanqie.js
 fanqie2= type=http-response,pattern=^http?:\/\/.+\.qdetyy.com\:?\d*\/.+\.m3u8$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/fanqie.js
 
