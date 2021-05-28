@@ -8,6 +8,7 @@ if (url.indexOf(path1) != -1) {
     for(j = 0,len=articles.length; j < len; j++) {
       articles[j].body.replace(/<div class="article-quote">/, '<br/><div class="article-quote">');
     }
+    console.log(JSON.stringify(obj));
     $done({ body: JSON.stringify(obj) });
 }else{
     $done({});
