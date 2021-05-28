@@ -7,10 +7,9 @@ if (url.indexOf(path1) != -1) {
     let articles = obj.data.articles;
     for(j = 0,len=articles.length; j < len; j++) {
       console.log(articles[j].body);
-      articles[j].body.replace('<div class=\"article-quote\">', '<br\/><div class=\"article-quote\">');
+      articles[j].body = articles[j].body.replace('<div class=\"article-quote\">', '<br\/><div class=\"article-quote\">');
       console.log(articles[j].body);
     }
-    console.log(JSON.stringify(obj));
     $done({ body: JSON.stringify(obj) });
 }else{
     $done({});
