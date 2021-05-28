@@ -5,9 +5,8 @@ const body = $response.body;
 if (url.indexOf(path1) != -1) {
     let obj = JSON.parse(body);
     let articles = obj.data.articles;
-    for(j = 0,len=articles.length; j < len; j++) {
-      console.log(articles[j].body);
-      articles[j].body = articles[j].body.replace('<div class=\"article-quote\">', '<br\/><div class=\"article-quote\">');
+    for(j = 0,len=articles.length; j < len; j++)
+      articles[j].body = articles[j].body.replace('<div class="article-quote">', '<br/><div class="article-quote">');
       console.log(articles[j].body);
     }
     $done({ body: JSON.stringify(obj) });
