@@ -3,7 +3,7 @@
 #!system=ios
 
 [Rule]
-AND,((USER-AGENT,NJVideo*), (NOT,((DOMAIN-SUFFIX,rr.tv)))),REJECT
+AND,((USER-AGENT,NJVideo*), (NOT,((DOMAIN-SUFFIX,rr.tv))), (NOT,((DOMAIN-SUFFIX,hpplay.cn)))),REJECT
 URL-REGEX,^https?:\/\/api\.rr\.tv\/(?:ad\/getAll$|storage/business/rootName/app/homePage),REJECT
 
 [Script]
