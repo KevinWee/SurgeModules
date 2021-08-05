@@ -1,0 +1,9 @@
+#!name=太原方特神画排队查看
+#!desc=借助虚拟定位随时查看园内排队情况
+#!system=ios
+
+[Script]
+ftpark = type=http-response,requires-body=true,pattern=^https?:\/\/loc\.map\.baidu\.com\/sdk\.php,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/ftpark.js
+
+[MITM]
+hostname = %APPEND% loc.map.baidu.com
