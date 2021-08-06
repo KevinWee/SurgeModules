@@ -41,6 +41,7 @@ if (url.indexOf(path1) != -1) {
       $done({ body: body });
     }
 }else if (url.indexOf(path2) != -1) {
+    console.log(url);
     let realCityOrPark = JSON.parse(body);
     if(realCityOrPark.result == 0 && realCityOrPark.data.length == 0) {
       fakePark.time = getDateFormat();
