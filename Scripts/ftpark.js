@@ -142,7 +142,7 @@ function base64Decode(val){
 
 
 if (url.indexOf(path1) != -1) {
-  let realStr = base64Decode(headers['ftly-appclientinfo']);
+  let realStr = decodeURIComponent(base64Decode(headers['ftly-appclientinfo']));
   console.log(realStr);
   let realObj = JSON.parse(realStr);
   if(realObj) {
