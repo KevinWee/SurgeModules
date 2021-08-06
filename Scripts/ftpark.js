@@ -145,7 +145,7 @@ if (url.indexOf(path1) != -1) {
   let realObj = JSON.parse(realStr);
   if(realObj) {
     realObj.LngLat = "112.657366|38.051506";
-    let fakeStr=JSON.stringify(realObj);
+    let fakeStr=JSON.stringify(realObj,null,2);
     console.log(fakeStr);
     headers['ftly-appclientinfo'] = base64Encode(fakeStr);
     console.log(headers['ftly-appclientinfo']);
