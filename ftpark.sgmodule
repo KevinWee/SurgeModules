@@ -3,7 +3,8 @@
 #!system=ios
 
 [Script]
-ftpark = type=http-response,requires-body=true,pattern=^https?:\/\/loc\.map\.baidu\.com\/sdk\.php,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/ftpark.js
+ftpark1 = type=http-response,requires-body=true,pattern=^https?:\/\/loc\.map\.baidu\.com\/sdk\.php,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/ftpark.js
+ftpark2 = type=http-response,requires-body=true,pattern=^https?:\/\/leyou\.fangte\.com\/v4\/api\/City\/QueryCityLocationLngLong?cityCode=0351,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/ftpark.js
 
 [MITM]
-hostname = %APPEND% loc.map.baidu.com
+hostname = %APPEND% loc.map.baidu.com,leyou.fangte.com
