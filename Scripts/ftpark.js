@@ -1,11 +1,6 @@
-const path1 = "loc.map.baidu.com";
-const path2 = "leyou.fangte.com/v4/api/City/";
-const path3 = "leyou.fangte.com/v4/api/Park/";
+const path1 = "leyou.fangte.com/project/api/ParkItem/";
 const url = $request.url;
-const body = $response.body;
-var fakePoi = {"content":{"addr":{"adcode":"140122","city":"太原市","city_code":"176","country":"中国","country_code":"0","district":"阳曲县","province":"山西省","town":"侯村乡"},"bldg":"","floor":"","navi":",,,","point":{"x":"112.644566","y":"38.045453"},"radius":"5.000000","sema":{"aptag":"在太原方特办公楼附近","aptagd":{"pois":[{"addr":"方特主题乐园","pid":"10287195336231470228","pname":"太原方特办公楼","pr":0.99000000,"tags":"房地产;写字楼"},{"addr":"山西省太原市阳曲县阳兴大道","pid":"15273452397609876702","pname":"方特东方神画","pr":0.99000000,"tags":"旅游景点;游乐园"},{"addr":"山西省太原市阳曲县","pid":"15891938541242695081","pname":"方特停车场","pr":0.99000000,"tags":"交通设施;停车场"}]}}},"result":{"error":"161","time":"2021-08-05 11:20:30"}};
-var fakeCity = {"result": 0,"data": [{"lngLong": [],"parkId": 73}],"message": "请求成功","msgShowType": 0,"time": "2021-08-05 23:13:45"};
-var fakePark = {"result": 0,"data": [],"message": "请求成功","msgShowType": 0,"time": "2021-08-05 23:13:45"};
+var headers = $request.headers;
 
 var getDateFormat = function(options){
   options = options || {};
@@ -30,87 +25,136 @@ var getDateFormat = function(options){
   return result;
 }
 
+/**
+ * @description base64编码方法
+ * @param val 需要编码的字符串
+ * @return 返回编码好的base64字符串
+ *	中文进行编码时，需要使用base64Encode(encodeURIComponent(a))
+ */
+function base64Encode(val){
+	var base64hash = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+	val=encodeURIComponent(val);
+    //把字符串转换为字符数组
+    var strArr = val.split('');
+ 
+    //装入结果的数组
+    var result = [];
+    //每个字符的ascii码
+    var asciiCode;
+    //上一个字符的ascii码
+    var prevAsciiCode;
+ 
+    var mod;
+    //未填充之前的数组与3的模
+    var preMod = strArr.length % 3;
+ 
+    //使字符数组组成三个一组
+    if(preMod == 1){
+        strArr.push(null);
+        strArr.push(null);
+    }
+    if(preMod == 2) strArr.push(null);
+    //遍历整个数组，寻找每个字符的ascii码
+    for(var index in strArr){
+        if(!strArr[index]){
+            asciiCode = 0;
+        }
+        else{
+            asciiCode = strArr[index].charCodeAt();
+        }
+        //位于一组当中的第几个字符
+        mod = index % 3;
+        switch(mod){
+            case 0:
+                //往右移2位
+                result.push(base64hash[asciiCode >> 2]);
+                break;
+            case 1:
+                //上一个ascii码往左移4位与现在的ascii码往右移四位做或操作
+                result.push(base64hash[(prevAsciiCode & 3) << 4 | asciiCode >> 4]);
+                break;
+            case 2:
+				//假设当前组的ascii为：01000111,00000011,00000000
+				//2表示当前索引位于第三个，第二个ascii码和15相与，获得低四位的值，右移两位后再从第三个ascii获取高二位作为新6位数的低二位
+                result.push(base64hash[(prevAsciiCode & 15) << 2 | asciiCode >> 6]);
+				//与2的6次方减1相与，获得低6位的值
+                result.push(base64hash[asciiCode & 63]);
+                break
+        }
+ 
+        prevAsciiCode = asciiCode
+    }
+ 
+    //处理异常
+    if(preMod == 1) {
+        result.splice(result.length - 2,2);
+        result.push('==');
+    }
+    else if(preMod == 2) {
+        result.pop();
+        result.push('=');
+    }
+ 
+    return result.join('');
+}
+
+/**
+ * Base64译码
+ * @param val base编码后的字符串
+ * @returns {string} 原字符串
+ */
+function base64Decode(val){
+	var base64hash = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+ 
+    //把字符串转换为字符数组
+    var strArr = val.split('');
+ 
+    //装入结果的数组
+    var result = [];
+	var preCode;
+	var code;
+	//余数，1-3
+	var n;
+	for(var i in strArr){
+		n=i%4;
+		code=base64hash.indexOf(strArr[i]);
+		switch(n){
+			case 0:
+				preCode=base64hash.indexOf(strArr[i]);
+				break;
+			case 1:
+				result.push(String.fromCharCode(preCode<<2|(code&48)>>4));
+				break;
+			case 2:
+				result.push(String.fromCharCode((preCode&15)<<4 |(code&60)>>2));
+				break;
+			case 3:
+				result.push(String.fromCharCode(((preCode&3)<<6)|code));
+				break;	
+				
+		}
+		preCode=code;
+		
+	}
+	
+	return decodeURIComponent(result.join(''));
+}
+
+
 if (url.indexOf(path1) != -1) {
-    let realPoi = JSON.parse(body);
-    if(realPoi.result.error == 161) {
-      fakePoi.result.time = getDateFormat();
-      let fakePoiStr=JSON.stringify(fakePoi);
-      console.log(fakePoiStr);
-      $done({ body: fakePoiStr });
-    }else{
-      console.log(body);
-      $done({ body: body });
-    }
-}else if (url.indexOf(path2) != -1) {
-    let realCity = JSON.parse(body);
-    if(realCity.result == 0) {
-      fakeCity.time = getDateFormat();
-      let lngLong = {"sort": 1,"longitude": 112.661606,"latitude": 37.519057};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 2,"longitude": 112.836381,"latitude": 37.689218};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 3,"longitude": 112.817983,"latitude": 37.831631};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 4,"longitude": 112.887404,"latitude": 37.969899};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 5,"longitude": 112.915287,"latitude": 38.066212};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 6,"longitude": 112.736345,"latitude": 38.192238};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 7,"longitude": 112.433795,"latitude": 38.151048};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 8,"longitude": 112.349858,"latitude": 38.002889};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 9,"longitude": 112.314213,"latitude": 37.889521};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 10,"longitude": 112.294666,"latitude": 37.744025};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 11,"longitude": 112.240624,"latitude": 37.504402};
-      fakeCity.data[0].lngLong.push(lngLong);
-      lngLong = {"sort": 12,"longitude": 112.454636,"latitude": 37.454917};
-      fakeCity.data[0].lngLong.push(lngLong);
-      let fakeCityStr=JSON.stringify(fakeCity);
-      console.log(fakeCityStr);
-      $done({ body: fakeCityStr });
-    }else{
-      console.log(body);
-      $done({ body: body });
-    }
-}else if (url.indexOf(path3) != -1) {
-    let realPark = JSON.parse(body);
-    if(realPark.result == 0) {
-      fakePark.time = getDateFormat();
-      let lngLong = {"longitude": 112.661606,"latitude": 37.519057};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.836381,"latitude": 37.689218};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.817983,"latitude": 37.831631};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.887404,"latitude": 37.969899};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.915287,"latitude": 38.066212};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.736345,"latitude": 38.192238};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.433795,"latitude": 38.151048};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.349858,"latitude": 38.002889};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.314213,"latitude": 37.889521};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.294666,"latitude": 37.744025};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.240624,"latitude": 37.504402};
-      fakePark.data.push(lngLong);
-      lngLong = {"longitude": 112.454636,"latitude": 37.454917};
-      fakePark.data.push(lngLong);
-      let fakeParkStr=JSON.stringify(fakePark);
-      console.log(fakeParkStr);
-      $done({ body: fakeParkStr });
-    }else{
-      console.log(body);
-      $done({ body: body });
-    }
+  let realStr = base64Decode(headers['ftly-appclientinfo']);
+  console.log(realStr);
+  let realObj = JSON.parse(realStr);
+  if(realObj) {
+    realObj.LngLat = "112.657366|38.051506";
+    let fakeStr=JSON.stringify(realObj);
+    console.log(fakeStr);
+    headers['ftly-appclientinfo'] = base64Encode(encodeURIComponent(fakeStr));
+    console.log(headers['ftly-appclientinfo']);
+  }else{
+    console.log("not modified");
+  }
+  $done({ headers });
 }else{
-    $done({ body: body });
+    $done({ headers });
 }
