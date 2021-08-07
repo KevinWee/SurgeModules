@@ -10,10 +10,11 @@ if (url.indexOf(path1) != -1) {
     let item = itemArray[j];
     if(item.waitTime>0){
       itemStr = itemStr + item.itemName+" "+item.distanceStr+" 需等候"+item.waitTime+"分钟 "+item.heightStr+"\r\n";
+      $notification.post("太原方特东方神画", "排队时间", item.itemName+" "+item.distanceStr+" 需等候"+item.waitTime+"分钟 "+item.heightStr);
     }
   }
   if(itemStr!=""){
-    $notification.post("方特排队时间", "方特排队", itemStr);
+    //$notification.post("方特排队时间", "方特排队", itemStr);
   }
   console.log(itemStr);
 }
