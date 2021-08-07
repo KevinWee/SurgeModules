@@ -4,6 +4,9 @@
 
 [Script]
 ftpark = type=http-request,requires-body=false,pattern=^https?:\/\/leyou\.fangte\.com\/project\/api\/ParkItem\/GetItemListForMap\?parkId=73&sortType=1,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/ftpark.js
+ftpark1 = type=http-response,requires-body=true,pattern=^https?:\/\/loc\.map\.baidu\.com\/sdk\.php,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/ftpark2.js
+ftpark2 = type=http-response,requires-body=true,pattern=^https?:\/\/leyou\.fangte\.com\/v4\/api\/City\/QueryCityLocationLngLong\?cityCode=0351,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/ftpark2.js
+ftpark3 = type=http-response,requires-body=true,pattern=^https?:\/\/leyou\.fangte\.com\/v4\/api\/Park\/QueryParkLocationLngLong\?parkId=73,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/ftpark2.js
 
 [MITM]
-hostname = %APPEND% leyou.fangte.com
+hostname = %APPEND% leyou.fangte.com,loc.map.baidu.com
