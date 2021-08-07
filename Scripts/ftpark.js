@@ -5,17 +5,13 @@ const body = $response.body;
 if (url.indexOf(path1) != -1) {
   let items = JSON.parse(body);
   let itemArray = items.data;
-  let itemStr="";
   for(j = 0,len=itemArray.length; j < len; j++) {
     let item = itemArray[j];
     if(item.waitTime>0){
-      itemStr = itemStr + item.itemName+" "+item.distanceStr+" 需等候"+item.waitTime+"分钟 "+item.heightStr+"\r\n";
-      $notification.post("太原方特东方神画", "排队时间", item.itemName+" "+item.distanceStr+" 需等候"+item.waitTime+"分钟 "+item.heightStr);
+      items.data[j].heightStr= "需等候"+item.waitTime+"分钟 "+item.heightStr;
     }
   }
-  if(itemStr!=""){
-    //$notification.post("方特排队时间", "方特排队", itemStr);
-  }
-  console.log(itemStr);
+  //$notification.post("太原方特东方神画", "点击具体项目", "可查看排队时间");
+  $done({ body: JSON.stringify(items) });
 }
-$done({ body: body });
+$done({});
