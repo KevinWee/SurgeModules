@@ -77,7 +77,7 @@ async function request_history_price(share_url) {
 		options.url = "https://bijiatool-v2.manmanbuy.com/ChromeWidgetServices/WidgetServices.ashx?methodName=getBiJiaInfo_wxsmall&p_url=" + encodeURIComponent(share_url);
 		$tool.get(options, function (error, response, data) {
 			if (!error) {
-				resolve(JSON.parse(data))
+				resolve(JSON.parse(transferString(data)))
 			} else {
 				reject(error)
 			}
@@ -93,6 +93,18 @@ function changeDateFormat(cellval) {
 	const currentDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
 	return date.getFullYear() + "-" + month + "-" + currentDate;
 }
+
+//替换所有的回车换行  
+function transferString(content) {  
+    var string = content;  
+    try{  
+        string=string.replace(/\r\n/g,"")  
+        string=string.replace(/\n/g,"");  
+    }catch(e) {  
+        alert(e.message);  
+    }  
+    return string;  
+} 
 
 function adword_obj() {
     return {
