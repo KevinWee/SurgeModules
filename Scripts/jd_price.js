@@ -31,8 +31,6 @@ if (url.indexOf(path2) != -1) {
     let msg = ""
     request_history_price(shareUrl)
         .then(data => {
-	    console.log(JSON.stringify(data))
-	    console.log(data.lowerPriceyh)
             if (!data.single.lowerPriceyh) throw new Error('Whoops!')
             msg = priceSummary(data)
         })
