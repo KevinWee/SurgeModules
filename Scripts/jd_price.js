@@ -33,7 +33,7 @@ if (url.indexOf(path2) != -1) {
         .then(data => {
 	    console.log(JSON.stringify(data))
 	    console.log(data.lowerPriceyh)
-            if (!data.hasOwnProperty("lowerPriceyh")) throw new Error('Whoops!')
+            if (!data.single.lowerPriceyh) throw new Error('Whoops!')
             msg = priceSummary(data)
         })
         .catch(error => msg = "暂无价格信息")
@@ -60,10 +60,10 @@ if (url.indexOf(path2) != -1) {
 }
 
 function priceSummary(data) {
-	const lower = data.lowerPriceyh;
-	const lower_date = changeDateFormat(data.lowerDateyh);
+	const lower = data.single.lowerPriceyh;
+	const lower_date = changeDateFormat(data.single.lowerDateyh);
 	const lower_msg = "〽️ 历史最低到手价:   ¥" + String(lower) + "   " + lower_date
-	const curret_msg = (data.currentPriceStatus ? "   当前价格" + data.currentPriceStatus : "") + "   (仅供参考)";
+	const curret_msg = (data.single.currentPriceStatus ? "   当前价格" + data.single.currentPriceStatus : "") + "   (仅供参考)";
 	return lower_msg + curret_msg;
 }
 
