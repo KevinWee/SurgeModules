@@ -31,7 +31,7 @@ if (url.indexOf(path2) != -1) {
     let msg = ""
     request_history_price(shareUrl)
         .then(data => {
-            if (!data.lowerPriceyh) throw new Error('Whoops!')
+            if (!data.hasOwnProperty("lowerPriceyh")) throw new Error('Whoops!')
             msg = priceSummary(data)
         })
         .catch(error => msg = "暂无价格信息")
