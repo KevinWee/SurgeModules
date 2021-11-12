@@ -13,7 +13,3 @@ https://raw.githubusercontent.com/KevinWee/SurgeModules/master/rrsp.sgmodule
 # 教學
 蘋果生態圈的網路神器 Surge 4 for iOS 簡易入門教學
 https://www.jkg.tw/p3330/
-
-# 推薦規則
-ADList
-https://raw.githubusercontent.com/jkgtw/Surge/master/Modules/ADList.sgmodule
