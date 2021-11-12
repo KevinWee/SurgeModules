@@ -1,5 +1,4 @@
-const path1 = "fanqie.tv";
-const path2 = "wareBusiness";
+const path1 = "xgys.me";
 const url = $request.url;
 const body = $response.body;
 
