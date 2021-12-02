@@ -1,5 +1,5 @@
-#!name=京东商城历史价格
-#!desc=查询商品历史价格并显示
+#!name=京东多合一签到
+#!desc=登录 https://home.m.jd.com/myJd/newhome.action 点击"我的"页面
 #!system=ios
 
 [Script]
