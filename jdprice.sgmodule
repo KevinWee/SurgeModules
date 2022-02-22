@@ -3,7 +3,7 @@
 #!system=ios
 
 [Script]
-jd_price = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),requires-body=1,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/jd_price.js
+jd_price = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
 
 [MITM]
 hostname = %APPEND% api.m.jd.com
