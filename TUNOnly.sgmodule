@@ -1,0 +1,6 @@
+#!name=TUN Only
+#!desc=开启 TUN Only 兼容模式
+#!system=ios
+
+[General]
+compatibility-mode = 3
