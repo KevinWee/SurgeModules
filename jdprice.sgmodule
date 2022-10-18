@@ -1,9 +1,0 @@
-#!name=京东商城历史价格
-#!desc=查询商品历史价格并显示
-#!system=ios
-
-[Script]
-jd_price = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
-
-[MITM]
-hostname = %APPEND% api.m.jd.com
