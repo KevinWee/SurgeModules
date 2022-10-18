@@ -3,8 +3,8 @@
 
 [General]
 
-skip-proxy = %APPEND% www.baidu.com,creditcard.bankcomm.com,dispatcher.is.autonavi.com,sjgjj.cn,zhufanggjj.com,zhufanggjj.cn
+skip-proxy = %APPEND% www.baidu.com,creditcardapp.bankcomm.com,dispatcher.is.autonavi.com,sjgjj.cn,zhufanggjj.com,zhufanggjj.cn
 
 ## www.baidu.com：网上国网、多看阅读、顺丰金融、广东农信、丰云行、中国银行缤纷生活、通信行程卡app、趣智校园
-## creditcard.bankcomm.com：买单吧
+## creditcardapp.bankcomm.com：买单吧
 ## dispatcher.is.autonavi.com：手机公积金
