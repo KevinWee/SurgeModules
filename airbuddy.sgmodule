@@ -1,0 +1,7 @@
+#!name=AirBuddy263激活
+#!desc=Paddle类软件激活
+#!system=mac
+
+[Script]
+Paddle1 = type=http-request,pattern=^https://v3.paddleapi.com/3.2/license/verify,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/paddle_act.js
+Paddle2 = type=http-request,pattern=^https://v3.paddleapi.com/3.2/license/activate,requires-body=1,max-size=0,debug=1,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/paddle_act.js
