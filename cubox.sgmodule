@@ -1,11 +1,9 @@
 #!name=Cubox
 #!desc=Cubox解锁
-#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/cubox.png
 #!homepage=https://yfamily.ml
-#!author=89996462
 
 [Script]
-Cubox=type=http-response,pattern=^https:\/\/cubox\.pro\/c\/api\/userInfo,requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/cubox.js
+Cubox=type=http-response,pattern=^https:\/\/cubox\.pro\/c\/api\/userInfo,requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/cubox.js
 
 [MITM]
 hostname = %APPEND% cubox.pro
