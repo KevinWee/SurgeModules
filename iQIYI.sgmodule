@@ -20,7 +20,7 @@ DOMAIN-SUFFIX,msg.video.qiyi.com,REJECT
 DOMAIN-SUFFIX,msg2.video.qiyi.com,REJECT
 DOMAIN-SUFFIX,policy.video.iqiyi.com,REJECT
 DOMAIN-SUFFIX,yuedu.iqiyi.com,REJECT
-DOMAIN-SUFFIX,pic8.iqiyipic.com,REJECT
+DOMAIN-SUFFIX,pic8.iqiyipic.com,REJECT-TINYGIF
 URL-REGEX,^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/show\.do,REJECT
 URL-REGEX,^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show,REJECT
 URL-REGEX,^https?:\/\/intl\.iqiyi\.com\/ad_external\/,REJECT
