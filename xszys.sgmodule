@@ -8,4 +8,4 @@ URL-REGEX,^https?:\/\/(run.api.qyfxgd.cn|a.weilai555.com|a.ecoliving168.com)(:\d
 removeXSZAd = type=http-response, pattern=^https?:\/\/(run.api.qyfxgd.cn|a.weilai555.com|a.ecoliving168.com)(:\d+)?\/api\/v\d\/movie\/index_recommend, requires-body=1, script-path=https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js
 
 [MITM]
-hostname = %APPEND% www.xszys.com:0,23.224.112.59:12345
+hostname = %APPEND% www.xszys.com:0
