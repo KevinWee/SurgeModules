@@ -5,7 +5,7 @@
 URL-REGEX,^https?:\/\/(run.api.qyfxgd.cn|a.weilai555.com|a.ecoliving168.com)(:\d+)?\/api\/v\d\/advert,REJECT
 
 [Script]
-remove555Ad = type=http-response, pattern=^https?:\/\/(run.api.qyfxgd.cn|a.weilai555.com|a.ecoliving168.com)(:\d+)?\/api\/v\d\/movie\/index_recommend, requires-body=1, script-path=https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js
+removeXSZAd = type=http-response, pattern=^https?:\/\/(run.api.qyfxgd.cn|a.weilai555.com|a.ecoliving168.com)(:\d+)?\/api\/v\d\/movie\/index_recommend, requires-body=1, script-path=https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js
 
 [MITM]
-hostname = %APPEND% www.xszys.com, a.weilai555.com:0, a.ecoliving168.com:0
+hostname = %APPEND% www.xszys.com:0
