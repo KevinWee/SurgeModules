@@ -1,0 +1,15 @@
+#!name= 小红书去水印
+#!desc=小红书APP去水印
+#!system=ios
+
+[Script]
+### forked from https://github.com/ddgksf2013/Rewrite/raw/master/AdBlock/XiaoHongShu.conf
+# > 小红书_短视频流去水印+强制开启保存功能
+小红书_短视频流去水印 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/redtube\?,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+# > 小红书_信息流视频去水印+强制开启保存功能
+小红书_信息流视频去水印 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/videofeed\?,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+# > 小红书_信息流图片去水印
+小红书_信息流图片去水印 = type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/feed\?,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+
+[MITM]
+hostname = %APPEND% edith.xiaohongshu.com, www.xiaohongshu.com, pages.xiaohongshu.com, referee.xiaohongshu.com
