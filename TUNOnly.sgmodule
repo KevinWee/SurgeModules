@@ -1,6 +1,0 @@
-#!name=TUN Only
-#!desc=开启 Tun Only 兼容模式，解决某些 APP 不能正常连接的问题
-#!system=ios
-
-[General]
-compatibility-mode = 3
