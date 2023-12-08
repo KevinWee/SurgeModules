@@ -1,0 +1,11 @@
+#!name= 扫描全能王VIP
+#!desc= 扫描全能王VIP
+#!system=ios
+
+[Script]
+### forked from https://github.com/ddgksf2013/dev/raw/master/ForOwnUse.conf
+# ✅ 扫描全能王
+扫描全能王VIP = type=http-response,pattern=^https:\/\/(api|api-cs)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,max-size=0,script-path=https://github.com/ddgksf2013/dev/raw/main/CamscannerProCrack.js
+
+[MITM]
+hostname = %APPEND% api.intsig.net, api-cs.intsig.net
