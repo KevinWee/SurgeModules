@@ -1,9 +1,0 @@
-#!name=Cubox
-#!desc=Cubox解锁
-#!homepage=https://yfamily.ml
-
-[Script]
-Cubox=type=http-response,pattern=^https:\/\/cubox\.pro\/c\/api\/userInfo,requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/cubox.js
-
-[MITM]
-hostname = %APPEND% cubox.pro
