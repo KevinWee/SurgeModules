@@ -11,25 +11,25 @@ DOMAIN-SUFFIX,sdkapp.uve.weibo.com,DIRECT
 # > 微博_AD_Preload@ddgksf2013
 URL-REGEX,^https?:\/\/api\.weibo\.cn\/\d\/ad\/preload,REJECT
 # > 微博国际版_趋势页热门影片@ddgksf2013
-URL-REGEX,^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl REJECT
+URL-REGEX,^https?:\/\/api\.weibo\.cn\/\d\/cardlist\?v_f=.*Weibo_intl,REJECT
 # > 微博_用户推荐弹窗@ddgksf2013
-URL-REGEX,^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser REJECT
+URL-REGEX,^https?:\/\/api\.weibo\.cn\/\d\/profile\/recommend_popuser,REJECT
 # > 微博_每日一次的开屏广告请求@ddgksf2013
-URL-REGEX,^https?:\/\/boot.*weibo\.com\/v\d\/ad\/realtime REJECT
+URL-REGEX,^https?:\/\/boot.*weibo\.com\/v\d\/ad\/realtime,REJECT
 # > 微博_去除底部超话栏表层浮icon及tips@ddgksf2013
-URL-REGEX,^https?:\/\/api\.weibo\.cn\/\d\/!\/huati\/discovery_home_bottom_getdotinfo REJECT
+URL-REGEX,^https?:\/\/api\.weibo\.cn\/\d\/!\/huati\/discovery_home_bottom_getdotinfo,REJECT
 # > 微博_屏蔽首页左上角每日的弹窗tips@ddgksf2013
-URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily REJECT
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily,REJECT
 # > 微博_应用内弹窗广告@ddgksf2013
-URL-REGEX,^https?:\/\/(preload-click|preload-impression)\.uve\.weibo\.com\/(interface\/wbpullad\/wbpullad_click\.php|wbapplua\/get_wbpullad_log\.lua) REJECT
+URL-REGEX,^https?:\/\/(preload-click|preload-impression)\.uve\.weibo\.com\/(interface\/wbpullad\/wbpullad_click\.php|wbapplua\/get_wbpullad_log\.lua),REJECT
 # > 微博_屏蔽sdkconfig请求@ddgksf2013
-URL-REGEX,^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php REJECT
+URL-REGEX,^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkconfig\.php,REJECT
 # > 微博_Spotlight@ddgksf2013
-URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight REJECT
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/hot\/hours_spotlight,REJECT
 # > 微博国际版_屏蔽hotsearch@ddgksf2013
-URL-REGEX,^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users REJECT
+URL-REGEX,^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php\?a=hot_search_users,REJECT
 # > 微博国际版_屏蔽热推荐@ddgksf2013
-URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\? REJECT
+URL-REGEX,^https?:\/\/m?api\.weibo\.c(n|om)\/\d\/ad\/weibointl\?,REJECT
 
 [Script]
 # > 微博_首页顶部homeExtend@ddgksf2013
