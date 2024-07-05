@@ -1,0 +1,9 @@
+#!name=Felo Translator
+#!desc=Felo使用时长处理
+#!system=ios
+
+[Script]
+felo = type=http-response,requires-body=true,pattern=^https?:\/\/translator\.felo\.me\/api\/user\/plan,script-path=https://raw.githubusercontent.com/KevinWee/SurgeModules/master/Scripts/felo.js
+
+[MITM]
+hostname = %APPEND% translator.felo.me
